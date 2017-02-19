@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'hb-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'hb works!';
+  title = 'hamsters book works!';
 }
