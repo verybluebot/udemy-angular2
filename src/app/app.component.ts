@@ -7,5 +7,5 @@ import { HeaderComponent } from './header/header.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'hamsters book works!';
+
 }

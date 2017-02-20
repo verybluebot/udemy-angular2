@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-sm-5">
+    Hamster List
+    <hb-hamster-list (hamsterSelected)="selectedHamster = $event"></hb-hamster-list>
+  </div>
+  <div class="col-sm-7">
+    Hamster Detail
+    <hb-hamster-detail [selectedHamster]="selectedHamster"></hb-hamster-detail>
+  </div>
+</div>

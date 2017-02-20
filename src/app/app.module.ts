@@ -5,11 +5,23 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { HamstersComponent } from './hamsters/hamsters.component';
+import { HamsterListComponent } from './hamsters/hamster-list/hamster-list.component';
+import { HamsterItemComponent } from './hamsters/hamster-list/hamster-item/hamster-item.component';
+import { HamsterDetailComponent } from './hamsters/hamster-detail/hamster-detail.component';
+import { ShopingListComponent } from './shoping-list/shoping-list.component';
+import { ShopingListAddComponent } from './shoping-list/shoping-list-add/shoping-list-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HamstersComponent,
+    HamsterListComponent,
+    HamsterItemComponent,
+    HamsterDetailComponent,
+    ShopingListComponent,
+    ShopingListAddComponent
   ],
   imports: [
     BrowserModule,
