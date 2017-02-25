@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Hamster} from '../hamster.def';
+import { Hamster } from '../hamster.def';
+import { ShopingListService } from '../../services/shoping-list-service';
 
 @Component({
   selector: 'hb-hamster-detail',
@@ -9,9 +10,14 @@ import {Hamster} from '../hamster.def';
 export class HamsterDetailComponent implements OnInit {
   @Input() selectedHamster: Hamster;
 
-  constructor() { }
+  constructor(
+    private ShopingListService: ShopingListService
+  ) { }
 
   ngOnInit() {
   }
 
+  onAdd() {
+    this.ShopingListService.addAbilities(this.selectedHamster.abilities)
+  }
 }

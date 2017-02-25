@@ -1,11 +1,11 @@
-import {Ability} from '../shared/ability.def';
+import { Ability } from '../shared/ability.def';
 
 export class Hamster {
   constructor(
-    private name: string,
-    private description: string,
-    private imagePath: string,
-    private abilities: Ability[]
+    public name: string,
+    public description: string,
+    public imagePath: string,
+    public abilities: Ability[]
   ) {
 
   }

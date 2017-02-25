@@ -12,6 +12,8 @@ import { HamsterDetailComponent } from './hamsters/hamster-detail/hamster-detail
 import { ShopingListComponent } from './shoping-list/shoping-list.component';
 import { ShopingListAddComponent } from './shoping-list/shoping-list-add/shoping-list-add.component';
 import { DropdwonDirective } from './directrivs/dropdwon.directive';
+import { HamstersService } from './services/hamsters.service';
+import { ShopingListService } from './services/shoping-list-service';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { DropdwonDirective } from './directrivs/dropdwon.directive';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [HamstersService, ShopingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
