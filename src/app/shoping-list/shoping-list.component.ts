@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Ability } from '../shared/ability.def';
 
 @Component({
   selector: 'hb-shoping-list',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shoping-list.component.scss']
 })
 export class ShopingListComponent implements OnInit {
+  private ability: Ability[];
 
-  constructor() { }
+  constructor() {
+    this.ability = [];
+  }
 
   ngOnInit() {
   }

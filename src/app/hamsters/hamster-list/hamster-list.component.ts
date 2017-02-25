@@ -9,9 +9,13 @@ import { Hamster } from '../hamster.def';
 export class HamsterListComponent implements OnInit {
   hamsters: Hamster[];
   @Output() hamsterSelected = new EventEmitter<Hamster>();
-  hamster = new Hamster('Shwartzenster', 'this hamster is killing it', 'http://www.shortday.in/wp-content/uploads/2015/08/cute-hamster-Photos.jpg');
 
-  constructor() { }
+  constructor() {
+    this.hamsters = [
+      new Hamster('Shwartzenster', 'this hamster is killing it', 'http://www.shortday.in/wp-content/uploads/2015/08/cute-hamster-Photos.jpg', []),
+      new Hamster('Yokozuna', 'this is the biggest hamster around', 'http://i.imgur.com/E6iuJEs.jpg', [])
+    ];
+  }
 
   ngOnInit() {
   }

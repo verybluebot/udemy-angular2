@@ -6,7 +6,7 @@
 <div class="row">
   <div class="col-xs-12">
     <ul class="list-group">
-      <hb-hamster-item [hamster]="hamster" (click)="onSelected(hamster)"></hb-hamster-item>
+      <hb-hamster-item *ngFor="let hamster of hamsters" [hamster]="hamster" (click)="onSelected(hamster)"></hb-hamster-item>
     </ul>
   </div>
 </div>

@@ -11,6 +11,7 @@ import { HamsterItemComponent } from './hamsters/hamster-list/hamster-item/hamst
 import { HamsterDetailComponent } from './hamsters/hamster-detail/hamster-detail.component';
 import { ShopingListComponent } from './shoping-list/shoping-list.component';
 import { ShopingListAddComponent } from './shoping-list/shoping-list-add/shoping-list-add.component';
+import { DropdwonDirective } from './directrivs/dropdwon.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ShopingListAddComponent } from './shoping-list/shoping-list-add/shoping
     HamsterItemComponent,
     HamsterDetailComponent,
     ShopingListComponent,
-    ShopingListAddComponent
+    ShopingListAddComponent,
+    DropdwonDirective
   ],
   imports: [
     BrowserModule,

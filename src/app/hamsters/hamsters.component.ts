@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Hamster} from './hamster.def';
+import { Hamster } from './hamster.def';
 
 @Component({
   selector: 'hb-hamsters',
