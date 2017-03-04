@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Hamster } from '../hamster.def';
 import { ShopingListService } from '../../services/shoping-list-service';
 import { Subscription } from 'rxjs';
@@ -10,7 +10,7 @@ import { HamstersService } from '../../services/hamsters.service';
   templateUrl: './hamster-detail.component.html',
   styleUrls: ['./hamster-detail.component.scss']
 })
-export class HamsterDetailComponent implements OnInit {
+export class HamsterDetailComponent implements OnInit, OnDestroy {
   @Input() selectedHamster: Hamster;
 
   private subscription: Subscription;
@@ -29,6 +29,10 @@ export class HamsterDetailComponent implements OnInit {
       this.hamsterIndex = +params['id'];
       this.selectedHamster = this.HamstersService.getHamster(this.hamsterIndex);
     })
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   onAdd() {
