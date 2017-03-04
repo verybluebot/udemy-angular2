@@ -19,4 +19,15 @@ export class HamstersService {
   getHamsters() {
     return this.hamsters;
   }
+
+  // this is protected in a shitty way because I asume that the id will not go out of range of 'hamsters' array.
+  // and, as this moment it doesnt because it comes from the 'hamsters' itartion on the list page...but one day...it will
+  // be changed and then this is fucked
+  getHamster(id: number) {
+    return this.hamsters[id];
+  }
+
+  deleteHamster(hamster: Hamster) {
+    this.hamsters.splice(this.hamsters.indexOf(hamster), 1);
+  }
 }

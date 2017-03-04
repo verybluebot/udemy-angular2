@@ -14,6 +14,9 @@ import { ShopingListAddComponent } from './shoping-list/shoping-list-add/shoping
 import { DropdwonDirective } from './directrivs/dropdwon.directive';
 import { HamstersService } from './services/hamsters.service';
 import { ShopingListService } from './services/shoping-list-service';
+import { routing } from './app.routing';
+import { HamsterEditComponent } from './hamsters/hamster-edit/hamster-edit.component';
+import { HamsterStartComponent } from './hamsters/hamster-start/hamster-start.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +28,15 @@ import { ShopingListService } from './services/shoping-list-service';
     HamsterDetailComponent,
     ShopingListComponent,
     ShopingListAddComponent,
-    DropdwonDirective
+    DropdwonDirective,
+    HamsterEditComponent,
+    HamsterStartComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [HamstersService, ShopingListService],
   bootstrap: [AppComponent]

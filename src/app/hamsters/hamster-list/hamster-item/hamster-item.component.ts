@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Hamster } from '../../hamster.def';
 
 @Component({
@@ -6,14 +6,9 @@ import { Hamster } from '../../hamster.def';
   templateUrl: './hamster-item.component.html',
   styleUrls: ['./hamster-item.component.scss']
 })
-export class HamsterItemComponent implements OnInit {
+export class HamsterItemComponent {
   @Input() hamster: Hamster;
-  hamasterId: number;
+  @Input() hamsterId: number;
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
-
 }

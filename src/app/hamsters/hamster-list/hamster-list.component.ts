@@ -11,7 +11,7 @@ import { ShopingListService } from '../../services/shoping-list-service';
 
 export class HamsterListComponent implements OnInit {
   hamsters: Hamster[];
-  @Output() hamsterSelected = new EventEmitter<Hamster>();
+  // @Output() hamsterSelected = new EventEmitter<Hamster>();
 
   constructor(
     private HamstersService: HamstersService,
@@ -25,7 +25,7 @@ export class HamsterListComponent implements OnInit {
   }
 
   onSelected(hamster: Hamster) {
-    this.hamsterSelected.emit(hamster);
+    // this.hamsterSelected.emit(hamster);
   }
 
   addAbilities() {
