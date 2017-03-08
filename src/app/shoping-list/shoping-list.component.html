@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-xs-10">
     <hr>
-    <hb-shoping-list-add></hb-shoping-list-add>
+    <hb-shoping-list-add [ability]="selectedAbility" (cleared)="onDelete()"></hb-shoping-list-add>
     <ul class="list-group">
-      <a class="list-group-item" *ngFor="let ability of abilities" style="cursor: pointer">{{ability.name}}</a>
+      <a class="list-group-item" *ngFor="let ability of abilities" (click)="onSelect(ability)" style="cursor: pointer">{{ability.name}} ({{ability.level}})</a>
     </ul>
   </div>
 </div>

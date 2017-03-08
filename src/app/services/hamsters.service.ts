@@ -30,4 +30,12 @@ export class HamstersService {
   deleteHamster(hamster: Hamster) {
     this.hamsters.splice(this.hamsters.indexOf(hamster), 1);
   }
+
+  addHamster(hamster: Hamster) {
+    this.hamsters.push(hamster);
+  }
+
+  editHamster(oldHamster: Hamster, newHamster: Hamster) {
+    this.hamsters[this.hamsters.indexOf(oldHamster)] = newHamster;
+  }
 }

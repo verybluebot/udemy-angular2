@@ -10,6 +10,7 @@ import { ShopingListService } from '../services/shoping-list-service';
 
 export class ShopingListComponent implements OnInit {
   private abilities: Ability[];
+  private selectedAbility: Ability = null;
 
   constructor(
     private ShopingListService: ShopingListService
@@ -21,4 +22,11 @@ export class ShopingListComponent implements OnInit {
     this.abilities = this.ShopingListService.getAbilities();
   }
 
+  onSelect(ability: Ability) {
+    this.selectedAbility = ability;
+  }
+
+  onDelete() {
+    this.selectedAbility = null;
+  }
 }
