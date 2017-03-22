@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HamstersService } from '../services/hamsters.service';
 
 @Component({
   selector: 'hb-header',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private HamstersService: HamstersService
+  ) { }
 
   ngOnInit() {
+  }2
+
+  saveHamsters() {
+    this.HamstersService.storeData().subscribe((res) => {
+      console.log('response', res)
+    }, (err) => {
+      console.log('error:', err);
+    })
   }
 
+  getHamsters() {
+    this.HamstersService.getData();
+  }
 }

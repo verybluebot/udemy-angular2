@@ -1,12 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Hamster } from '../hamsters/hamster.def';
 import { Ability } from '../shared/ability.def';
+import { Headers, Http, Response } from '@angular/http';
+
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class HamstersService {
   hamsters: Hamster[];
+  changedHamsters: EventEmitter<Hamster[]> = new EventEmitter;
 
-  constructor() {
+  constructor(
+    private Http: Http
+  ) {
     this.hamsters = [
       new Hamster('Shwartzenster', 'this hamster is killing it', 'http://www.shortday.in/wp-content/uploads/2015/08/cute-hamster-Photos.jpg', [
         new Ability('fire from eyes', 'shooting fire from the eyes', 5, 'no image'),
@@ -37,5 +43,23 @@ export class HamstersService {
 
   editHamster(oldHamster: Hamster, newHamster: Hamster) {
     this.hamsters[this.hamsters.indexOf(oldHamster)] = newHamster;
+  }
+
+  storeData() {
+    const body = JSON.stringify(this.hamsters);
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    // this is some very bad bad implantation but oh well
+    return this.Http.put('https://hamster-book.firebaseio.com/hamstesr.json?auth=uJL70wwbCC8ZJGCI5v25wXnxqjXx3p3kRq4HvnhY', body, {headers: headers});
+  }
+
+  getData() {
+    return this.Http.get('https://hamster-book.firebaseio.com/hamstesr.json?auth=uJL70wwbCC8ZJGCI5v25wXnxqjXx3p3kRq4HvnhY')
+      .map((res: Response) => res.json())
+      .subscribe((data: Hamster[]) => {
+        this.hamsters = data;
+        this.changedHamsters.emit(this.hamsters);
+      })
   }
 }

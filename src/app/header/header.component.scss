@@ -1,0 +1,7 @@
+.dropdown-menu {
+  li {
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}

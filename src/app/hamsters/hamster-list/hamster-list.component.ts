@@ -21,7 +21,10 @@ export class HamsterListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.hamsters = this.HamstersService.getHamsters()
+    this.hamsters = this.HamstersService.getHamsters();
+    this.HamstersService.changedHamsters.subscribe((hamsters: Hamster[]) => {
+      this.hamsters = hamsters;
+    })
   }
 
   onSelected(hamster: Hamster) {

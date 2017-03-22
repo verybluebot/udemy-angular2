@@ -92,17 +92,19 @@ export class HamsterEditComponent implements OnInit, OnDestroy {
     let hamsterAbilities = new FormArray([]);
 
     if (!this.isNew) {
-      _.forEach(this.hamster.abilities, (ability) => {
-        hamsterAbilities.push(
-          new FormGroup({
-            name: new FormControl(ability.name, Validators.required),
-            level: new FormControl(ability.level, [
-              Validators.required,
-              Validators.pattern("\\d+")
-            ])
-          })
-        );
-      });
+      if (this.hamster.abilities) {
+        _.forEach(this.hamster.abilities, (ability) => {
+          hamsterAbilities.push(
+            new FormGroup({
+              name: new FormControl(ability.name, Validators.required),
+              level: new FormControl(ability.level, [
+                Validators.required,
+                Validators.pattern("\\d+")
+              ])
+            })
+          );
+        });
+      }
 
       hamsterName = this.hamster.name;
       hamsterDesc = this.hamster.description;
