@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-  }2
+  }
 
   saveHamsters() {
     this.HamstersService.storeData().subscribe((res) => {

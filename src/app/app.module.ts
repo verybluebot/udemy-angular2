@@ -17,6 +17,9 @@ import { ShopingListService } from './services/shoping-list-service';
 import { routing } from './app.routing';
 import { HamsterEditComponent } from './hamsters/hamster-edit/hamster-edit.component';
 import { HamsterStartComponent } from './hamsters/hamster-start/hamster-start.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,8 @@ import { HamsterStartComponent } from './hamsters/hamster-start/hamster-start.co
     DropdwonDirective,
     HamsterEditComponent,
     HamsterStartComponent,
+    SignupComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,7 @@ import { HamsterStartComponent } from './hamsters/hamster-start/hamster-start.co
     routing,
     ReactiveFormsModule
   ],
-  providers: [HamstersService, ShopingListService],
+  providers: [HamstersService, ShopingListService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
